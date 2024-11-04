@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-blue-500  top-0 w-full z-10 flex relative justify-between items-center mx-auto px-8 h-20">
+        <!-- Logo -->
+        <div class="inline-flex">
+            <a href="/" class="_o6689fn">
+                <div class="hidden md:block">
+                    <!-- Imagen del logo para escritorio -->
+                </div>
+                <div class="block md:hidden">
+                    <!-- Imagen del logo para móvil -->
+                </div>
+            </a>
+        </div>
+
+        <!-- Botón de perfil con menú desplegable -->
+        <div class="flex-initial">
+            <div class="flex justify-end items-center relative">
+                <div class="block">
+                    <div class="inline relative">
+                        <!-- Botón para mostrar/ocultar el menú desplegable -->
+                        <button type="button" id="menu-toggle"
+                        
+                            class="items-center relative px-4 border rounded-full text-black shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105">
+                            <div class="block flex-grow-0 flex-shrink-0 h-10 w-12 pl-5">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="presentation" focusable="false" style="display: block; height: 100%; width: 100%; fill: currentcolor;">
+                                    <path
+                                        d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+
+                        <!-- Menú desplegable -->
+                        <div id="menu-dropdown" class="drop-down w-48 overflow-hidden bg-white rounded-md shadow absolute top-5 right-1 hidden">
+                            <ul>
+                                <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </span>
+                                    <span> Setting </span>
+                                </li>
+                                <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </span>
+                                    <span> Wishlist </span>
+                                </li>
+                                <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                        </svg>
+                                    </span>
+                                    <button  onclick="window.location.href='login.html'" class=" hover:bg-slate-400"> Logout </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal: Lista de Tareas -->
+    <div class="flex items-center justify-center mt-20">
+        <div class="relative flex font-sans flex-col items-center max-w-[400px] bg-white shadow-lg p-6 border border-gray-200 rounded-3xl">
+            <!-- Título "Tareas" centrado -->
+            <div class="flex justify-center mb-4">
+                <h4 class="text-xl font-bold text-navy-700">Tareas</h4>
+            </div>
+            <div class="w-full">
+                <!-- Item de Tarea -->
+                <div class="mt-2 flex items-center justify-between rounded-lg hover:bg-gray-50 px-4 py-2">
+                    <p class="text-base text-black whitespace-nowrap">Landing Page Design</p>
+                    <button class="ml-60 bg-blue-500 px-4 py-2 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105">Completado</button>
+                </div>
+                <!-- Más tareas pueden añadirse aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        document.getElementById("menu-toggle").onclick = function () {
+            var dropdown = document.getElementById("menu-dropdown");
+            dropdown.classList.toggle("hidden");
+        };
+    </script>
+
+</body>
+
+</html>
